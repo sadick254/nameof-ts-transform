@@ -1,8 +1,8 @@
 {
   "name": "nameof-ts-transform",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A typescript custom tranformer to transform class names and object properties to string at compile time.",
-  "main": "dist/main.js",
+  "main": "src/index.ts",
   "scripts": {
     "test": "echo \"not implemented\""
   },
@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/sadick254/nameof-ts-transform/issues"
   },
-  "homepage": "https://github.com/sadick254/nameof-ts-transform#readme"
+  "homepage": "https://github.com/sadick254/nameof-ts-transform#readme",
+  "dependencies": {
+    "typescript": "^4.9.4"
+  }
 }
