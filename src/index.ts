@@ -1,4 +1,4 @@
-import ts from 'typescript'
+import ts, { walkUpBindingElementsAndPatterns } from 'typescript'
 
 
 export const before = (options?: any, program?: ts.Program) => {
@@ -37,4 +37,8 @@ export const before = (options?: any, program?: ts.Program) => {
             return ts.visitNode(sourceFile, visitor);
         }
     }
+}
+
+export function nameof<T>(): string {
+    return 'nameof'
 }
