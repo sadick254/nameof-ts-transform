@@ -1,6 +1,6 @@
 {
   "name": "nameof-ts-transform",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A typescript custom tranformer to transform class names and object properties to string at compile time.",
   "source": "src/index.ts",
   "main": "dist/main.js",
@@ -29,7 +29,7 @@
     "typescript": "^4.9.4"
   },
   "files": [
-      "dist/*"
+    "dist/*"
   ],
   "devDependencies": {
     "parcel": "^2.8.2"
