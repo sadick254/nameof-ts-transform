@@ -1,4 +1,4 @@
-import ts, { walkUpBindingElementsAndPatterns } from 'typescript'
+import * as ts from 'typescript'
 
 
 export const before = (options?: any, program?: ts.Program) => {
@@ -25,6 +25,21 @@ export const before = (options?: any, program?: ts.Program) => {
                         if (!!typeName) {
                             return ts.factory.createStringLiteral(typeName);
                         }
+                    } else if (expressionText === 'nameof' && node.arguments && node.arguments.length >= 1) {
+                        const propertyPath = node.arguments[0].getText().replace(/\?/g, "");
+                        if (node.arguments.length === 2) {
+                            const parts = propertyPath.split(".");
+                            if (parts.length > 1) {
+                                parts[0] = "";
+                                return ts.factory.createBinaryExpression(
+                                    ts.factory.createIdentifier(node.arguments[1].getText()),
+                                    ts.factory.createToken(ts.SyntaxKind.PlusToken),
+                                    ts.factory.createStringLiteral(parts.join("."))
+                                );
+                            }
+                        }
+
+                        return ts.factory.createStringLiteral(propertyPath);
                     }
 
                 } else if (ts.isImportDeclaration(node) && node.moduleSpecifier.getText().includes('nameof-ts-transform')) {
@@ -39,6 +54,9 @@ export const before = (options?: any, program?: ts.Program) => {
     }
 }
 
+export function nameof<T>(property?: unknown, replaceParent?: string): string;
 export function nameof<T>(): string {
     return 'nameof'
 }
+
+export default before
