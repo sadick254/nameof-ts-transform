@@ -1,7 +1,7 @@
 import * as ts from 'typescript'
 
 
-export const before = (options?: any, program?: ts.Program) => {
+export const before = () => {
     return (context: ts.TransformationContext) => {
         return (sourceFile: ts.SourceFile) => {
 
