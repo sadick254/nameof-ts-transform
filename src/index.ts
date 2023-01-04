@@ -59,4 +59,4 @@ export function nameof<T>(): string {
     return 'nameof'
 }
 
-export default before
+export default before()
