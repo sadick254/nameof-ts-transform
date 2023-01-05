@@ -26,8 +26,8 @@
     "url": "https://github.com/sadick254/nameof-ts-transform/issues"
   },
   "homepage": "https://github.com/sadick254/nameof-ts-transform#readme",
-  "dependencies": {
-    "typescript": "^4.9.4"
+  "peerDependencies": {
+    "typescript": "~4.8.2"
   },
   "files": [
     "dist/*"
