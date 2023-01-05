@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/sadick254/nameof-ts-transform#readme",
   "peerDependencies": {
-    "typescript": "~4.8.2"
+    "typescript": "^4.8.2"
   },
   "files": [
     "dist/*"
