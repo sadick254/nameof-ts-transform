@@ -45,8 +45,9 @@ function transformer(context: ts.TransformationContext) {
   }
 }
 
-export function nameof() {
-  return 'nameof'
+export function nameof<T>(property?: unknown, replaceParent?: string): string;
+export function nameof<T>(): string {
+    return 'nameof';
 }
 
 export const name: string = 'nameof-ts-transform';
