@@ -62,6 +62,6 @@ export function nameof<T>(): string {
 // Needed for ts-test jest tranform
 export const name = 'nameof-ts-transform';
 export const version = '0.0.9'
-export const transformerFactory = before();
+export const factory = before;
 
 export default before();
