@@ -56,7 +56,12 @@ export const before = () => {
 
 export function nameof<T>(property?: unknown, replaceParent?: string): string;
 export function nameof<T>(): string {
-    return 'nameof'
+    return 'nameof';
 }
 
-export default before()
+// Needed for ts-test jest tranform
+export const name = 'nameof-ts-transform';
+export const version = '0.0.9'
+export const transformerFactory = before();
+
+export default before();
