@@ -1,4 +1,7 @@
 import * as ts from 'typescript';
+export { manual } from './manual' 
+export { tsTransformersPreProcess } from './svelte';
+export { viteNameofPlugin } from './vite';
 
 function transformer(context: ts.TransformationContext) {
   return function createVisitor(sourceFile: ts.SourceFile) {
